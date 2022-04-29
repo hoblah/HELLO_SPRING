@@ -1,4 +1,4 @@
-package com.kosmo.slowwalking.decorators;
+package com.kosmo.testapp;
 
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -33,7 +33,7 @@ public class OneDayDecorator implements DayViewDecorator {
     public void decorate(DayViewFacade view) {
         view.addSpan(new StyleSpan(Typeface.BOLD));
         view.addSpan(new RelativeSizeSpan(1.4f));
-        view.addSpan(new ForegroundColorSpan(Color.parseColor("#DC5C05")));
+        view.addSpan(new ForegroundColorSpan(Color.parseColor("#145374")));
     }
 
     /**

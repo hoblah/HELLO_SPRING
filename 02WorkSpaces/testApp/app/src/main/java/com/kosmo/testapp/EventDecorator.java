@@ -1,9 +1,8 @@
-package com.kosmo.slowwalking.decorators;
+package com.kosmo.testapp;
 
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
 
-import com.kosmo.slowwalking.R;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.DayViewDecorator;
 import com.prolificinteractive.materialcalendarview.DayViewFacade;
@@ -22,7 +21,7 @@ public class EventDecorator implements DayViewDecorator {
     private HashSet<CalendarDay> dates;
 
     public EventDecorator(int color, Collection<CalendarDay> dates,Activity context) {
-        drawable = context.getResources().getDrawable(R.drawable.more);
+        drawable = context.getResources().getDrawable(R.drawable.icon_subject);
         this.color = color;
         this.dates = new HashSet<>(dates);
     }
@@ -36,5 +35,10 @@ public class EventDecorator implements DayViewDecorator {
     public void decorate(DayViewFacade view) {
         view.setSelectionDrawable(drawable);
         view.addSpan(new DotSpan(5, color)); // 날자밑에 점
+
+        view.addSpan(new DotSpan(1, color));//
     }
+
+
+
 }

@@ -1,0 +1,28 @@
+{
+    member : [
+        {name:"류승범",age:20,hobbys:["호의가 계속되면"," 권리인 줄 알어"],
+            login:{user:"hwang",pass:"1111"}},
+        {name:"박성웅",age:18,hobbys:["거 죽기 ","딱~ 좋은날씨네"],
+            login:{user:"jo",pass:"2222"}},
+        {name:"송강호",age:30,hobbys:["국가란 ","국민입니다"],
+            login:{user:"choi",pass:"3333"}},
+        {name:"원빈",age:40,hobbys:["아직 한발 남았다"],
+            login:{user:"jang",pass:"4444"}},
+        {name:"최민식",age:55,hobbys:["신에게는 아직 12척의 ", "배가 남아있사옵니다"],
+            login:{user:"lee",pass:"5555"}},
+        {name:"황정민",age:41,hobbys:["인생은 고통이야", " 몰랐어?"],
+            login:{user:"lee",pass:"6666"}},
+        {name:"김규리",age:11,hobbys:["DJ","영화배우","미인도"],
+            login:{user:"kim",pass:"7777"}},
+        {name:"김태희",age:18,hobbys:["CF","대표미녀"],
+            login:{user:"bee",pass:"8888"}},
+        {name:"김혜수",age:23,hobbys:["국민여배우","이대나온여자"],
+            login:{user:"leehwa",pass:"9999"}},
+        {name:"수지",age:30,hobbys:["미스에이","댄스","JYP"],
+            login:{user:"missa",pass:"1010"}},
+        {name:"이나영",age:32,hobbys:["아저씨부인","맥심","유니클로"],
+            login:{user:"bean",pass:"1212"}},
+        {name:"한가인",age:45,hobbys:["도전골든벨","건축학개론","엄친딸"],
+            login:{user:"gain",pass:"1313"}}
+    ]
+}

@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- 액티비티 자체를 롱클릭 했을때 생성되는 메뉴 -->
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <item
+        android:id="@+id/menu_layout"
+        android:title="메인엑티비티용 컨텍스트 메뉴"
+        android:orderInCategory="100"/>
 </menu>

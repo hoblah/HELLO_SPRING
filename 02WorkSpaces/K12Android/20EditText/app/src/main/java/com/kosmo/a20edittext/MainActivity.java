@@ -16,6 +16,7 @@ import java.io.UnsupportedEncodingException;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Logcat을 사용하기 위한 태그 설정.
     private static final String TAG = "KOSMO123";
 
     TextView textView1;

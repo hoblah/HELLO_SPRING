@@ -1,4 +1,4 @@
-package com.kosmo.a40mylocation;
+package com.kosmo.a40fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+//상단(TOP)영역에 포함될 프레그먼트로 XML레이아웃 파일을 inflate한다.
 public class TopFragment extends Fragment {
 
     @Nullable

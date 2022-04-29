@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#00ff00"
+    android:background="#0000ff"
     android:gravity="center">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="메뉴2 프레그먼트"
+        android:text="메뉴3 프레그먼트"
         android:textSize="30sp"
-        android:id="@+id/button2" />
+        android:id="@+id/button3" />
 
 </LinearLayout>

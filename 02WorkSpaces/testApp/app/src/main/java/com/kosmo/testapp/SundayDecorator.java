@@ -1,4 +1,4 @@
-package com.kosmo.slowwalking.decorators;
+package com.kosmo.testapp;
 
 import android.graphics.Color;
 import android.text.style.ForegroundColorSpan;

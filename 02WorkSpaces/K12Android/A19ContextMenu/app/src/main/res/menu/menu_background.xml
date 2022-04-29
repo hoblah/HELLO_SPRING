@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- 액티비티의 배경색 변경을 위한 메뉴 -->
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <item android:id="@+id/item_red"
+        android:title="빨간맛" />
+    <item android:id="@+id/item_green"
+        android:title="녹색맛" />
+    <item android:id="@+id/item_blue"
+        android:title="파란맛" />
 </menu>
