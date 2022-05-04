@@ -4,6 +4,7 @@ import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemoryMemberRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
@@ -13,15 +14,32 @@ import static org.assertj.core.api.Assertions.*;
 
 class MemberServiceTest {
 
-    MemberService memberService = new MemberService();
-    MemoryMemberRepository memoryMemberRepository = new MemoryMemberRepository();
+    //MemberService memberService = new MemberService();
+    //MemoryMemberRepository memoryMemberRepository = new MemoryMemberRepository();
+    MemberService memberService;
+    MemoryMemberRepository  memberRepository;
+    
+    /* 테스트 실행할때마다 해당 메서드가 실행되며 새로운 객체가 각각 실행된다.
+       테스트는 독립적으로 실행되야한다. 각테스트를 실행하기전에
+       MemoryMemberRepository()를 생성하고,
+       해당 변수를 MemberService의 매개변수로 넣어준다.
+       그러면 같은 MemberRepository가 사용이 될것이다.
+       이것은 MemberService.java 자바 클래스 입장에서는 직접 new 하지않고,
+       외부에서 memberRepository를 넣어준다.
+       이것을 디펜더시 인젝션 즉 DI라고 한다.
+     */
+    @BeforeEach
+    public void beforeEach(){
+        memberRepository = new MemoryMemberRepository();
+        memberService = new MemberService(memberRepository);
+    }
 
     // 테스트 메서드가 끝날때마다 객체를 지우게된다. 메서드 실행순서에 상관없이 오류가 나지않음.
     // 테스틑 서로 의존관계없이 설계가 되어야한다.
     // 그러기 위해선 하나의 테스트가 끝날때마다 저장소나 공용데이터들을 깔끔하게 지워줘야 문제가없다.
     @AfterEach
     public void afterEach(){
-        memoryMemberRepository.clearStore();
+        memberRepository.clearStore();
     }
     @Test
     void 회원가입() {
