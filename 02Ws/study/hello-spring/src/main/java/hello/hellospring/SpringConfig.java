@@ -32,6 +32,9 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository() {
         //return new MemoryMemberRepository();
+        /* 스프링 빈 등록을 MemoryMemberRepository() 에서
+           > JdbcMemberRepository()로 변경하고
+             dataSource는 스프링이 제공해준다. */
         return new JdbcMemberRepository(dataSource);
     }
 }
