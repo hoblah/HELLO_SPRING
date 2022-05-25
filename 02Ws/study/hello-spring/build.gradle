@@ -15,8 +15,10 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	// 자바는 기본적으로 디비랑 붙으려면 JDBC 드라이버가 필요함.
-	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	// 자바는 기본적으로 디비랑 붙으려면 JDBC 드라이버가 필요함. > JPA로 변경 주석처리.
+	// implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	// JPA 및 JDBC 도 포함됨 코드추가.
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	// 이것은 디비랑 붙을때 데이터베이스가 제공하는 클라이언트가 필요하다.
 	// 지금은 h2database 클라이언트가 필요해서 추가함.
 	runtimeOnly 'com.h2database:h2'
