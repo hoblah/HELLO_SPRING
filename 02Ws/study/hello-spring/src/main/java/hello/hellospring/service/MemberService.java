@@ -2,13 +2,16 @@ package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
-import hello.hellospring.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
+/*  JPA는 join() 메서드를 들어갈때 다 트랜잭션 안에서 실행 되어야 한다.
+    @Transactional 어노테이션 추가.
+ */
+@Transactional
 public class MemberService {
 
     //private final MemberRepository memberRepository = new MemoryMemberRepository();

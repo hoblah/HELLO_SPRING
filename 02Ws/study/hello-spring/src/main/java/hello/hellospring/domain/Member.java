@@ -17,7 +17,7 @@ public class Member {
 		 이 정보로 쿼리문을 만들수 있는 것이다.
 		 JPA가 그렇게 동작 하는 것이다.
 		 import javax.persistence.*; 임폴트. */
-    @Column(name = "username")
+    //@Column(name = "username")
     private String name;
 
     public Long getId() {
