@@ -1,5 +1,6 @@
 package hello.hellospring.service;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,17 +29,32 @@ public class MemberService {
     public Long join(Member member) {
         // 같은 이름이 있는 중복 회원X
 
-        /*
-        Optional<Member> result = memberRepository.findByName(member.getName());
-        result.ifPresent(m -> {
-            throw new IllegalStateException("이미 존재하는 회원입니다.");
-        }); */
+        // 현재 밀리초 - 천 분의 1초
+        long start = System.currentTimeMillis();
 
-        // 앞에 옵셔널을 지운후 바로 뒤에 메서드를 붙혀 사용가능.
-        validateDuplicateMember(member); // 중복 회원 검증.
+        /* 로직이 끝날때 시간을 측정해야한다.
+           예외가 터져도 찍어야 하는경우 try{} finally{}을 해야함. */
+        try{
+            /*
+            Optional<Member> result = memberRepository.findByName(member.getName());
+            result.ifPresent(m -> {
+                throw new IllegalStateException("이미 존재하는 회원입니다.");
+            }); */
+            // 앞에 옵셔널을 지운후 바로 뒤에 메서드를 붙혀 사용가능.
+            validateDuplicateMember(member); // 중복 회원 검증.
 
-        memberRepository.save(member);
-        return member.getId();
+            memberRepository.save(member);
+            return member.getId();
+
+        } finally {
+            // 함수 끝나기전 밀리초 체크.
+            long finish = System.currentTimeMillis();
+            // 끈날때 시간에서 시작하는 시간 빼기.
+            long timeMs = finish - start;
+            // 계산한 초 출력.
+            System.out.println("join = "+ timeMs + "ms");
+        }
+
     }
 
     // Refactor This > Ctrl+Alt+Shift+T > 리팩토링 관련 전체 항목을 조회.
@@ -54,7 +70,15 @@ public class MemberService {
      * 전체 회원 조회 > 모든 전체 목록을 표시하는 메서드를 호출하여 리턴함.
      */
     public List<Member> findMembers() {
-        return memberRepository.findAll();
+        long start = System.currentTimeMillis();
+        try{
+            return memberRepository.findAll();
+        } finally {
+            long finish = System.currentTimeMillis();
+            long timeMs = finish - start;
+            System.out.println("join = "+ timeMs + "ms");
+        }
+
     }
 
     public Optional<Member> findOne(Long memberId) {
