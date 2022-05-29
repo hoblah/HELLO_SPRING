@@ -1,15 +1,11 @@
 package hello.hellospring;
 
+import hello.hellospring.aop.TimeTraceAop;
 import hello.hellospring.repository.*;
 import hello.hellospring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.sql.DataSource;
-import javax.swing.*;
 
 @Configuration
 public class SpringConfig {
@@ -68,6 +64,12 @@ public class SpringConfig {
     }
 
     */
+
+    // AOP 사용위해 스프링 빈에 등록함.
+    /*@Bean
+    public TimeTraceAop timeTraceAop() {
+        return new TimeTraceAop();
+    }*/
 
 
 }
