@@ -18,15 +18,16 @@ public class MemberController {
     private MemberService memberService;
 
     // 생성자
-/*    @Autowired
+    @Autowired
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
-    }*/
+        System.out.println("memberService = " + memberService.getClass());
+    }
 
-    @Autowired
+/*    @Autowired
     public void setMemberService(MemberService memberService){
         this.memberService = memberService;
-    }
+    }*/
 
     @GetMapping("/members/new")
     public String createForm(){
